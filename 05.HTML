@@ -2,54 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Model</title>
+    <!-- Метаданные документа -->
+    <meta charset="UTF-8"> <!-- Кодировка UTF-8 для поддержки всех символов -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Адаптивность для мобильных устройств -->
+    <title>Box Model</title> <!-- Заголовок страницы в браузере -->
     <style>
+        /* Глобальные стили для всех элементов */
         * {
-            margin: 0px;
-            padding: 0px;
-
+            margin: 0px;    /* Убираем внешние отступы у всех элементов */
+            padding: 0px;   /* Убираем внутренние отступы у всех элементов */
+            box-sizing: border-box; /* Размеры элементов включают padding и border */
         }
 
+        /* Стили для тела документа */
         body {
-            margin: 10px;
+            margin: 10px;   /* Внешний отступ 10px вокруг всего содержимого body */
         }
 
+        /* Контейнер для основного содержимого */
         .container {
-            max-width: 400px;
-            margin: auto;
+            max-width: 400px; /* Максимальная ширина контейнера */
+            margin: auto;     /* Автоматические отступы по бокам (центрирование) */
         }
 
+        /* Стили для блоков с контентом */
         .box {
-            background-color: blueviolet;
-            color: aquamarine;
-            padding: 15px;
-            border: 4px solid red;
-            margin: 10px;
+            background-color: blueviolet; /* Фиолетовый фон */
+            color: aquamarine;             /* Цвет текста - аквамарин */
+            padding: 15px;                 /* Внутренние отступы 15px */
+            border: 4px solid red;         /* Красная рамка толщиной 4px */
+            margin: 10px;                  /* Внешние отступы 10px */
         }
+        
+        /* Контейнер для плавающих блоков */
         .blocks {
-            width: 100%;
+            width: 100%;                  /* Ширина на всю доступную ширину */
+            overflow: hidden;              /* Очистка float (чтобы родительский контейнер "видел" float элементы) */
         }
-        .blocks.block {
-            width: 25%;
-            background-color: black;
-            height: 50px;
-            float: left;
+        
+        /* Стили для отдельных блоков внутри .blocks */
+        .blocks .block {
+            width: 25%;                   /* Ширина 25% от родителя (4 блока в ряд) */
+            background-color: black;      /* Черный фон */
+            height: 50px;                /* Фиксированная высота 50px */
+            float: left;                  /* Позиционирование слева (блоки в ряд) */
+            border: 1px solid rgb(113, 0, 128)
         }
     </style>
-
 </head>
 
 <body>
+    <!-- Основной контейнер с контентом -->
     <div class="container">
+        <!-- Первый блок с контентом -->
         <div class="box">
-            <h2>BoxModel</h2>
+            <h2>BoxModel</h2> <!-- Заголовок второго уровня -->
             <p>Здесь будет рандомный текст о том как создавался бокс модуль вначале создали новый файл, !
                 восклицательный
-                знак интер получили изначальные данные файла, далее через точку переходим к классу.</p>
+                знак интер получили изначальные данные файла, далее через точку переходим к классу.</p> <!-- Текст -->
         </div>
-        <br>
+        <br> <!-- Разрыв строки между блоками -->
+        
+        <!-- Второй блок с контентом -->
         <div class="box">
             <h2>BoxModel</h2>
             <p>Здесь будет рандомный текст о том как создавался бокс модуль вначале создали новый файл, !
@@ -57,16 +71,14 @@
                 знак интер получили изначальные данные файла, далее через точку переходим к классу.</p>
         </div>
     </div>
-    <div class="Blocks">
+    
+    <!-- Контейнер для черных блоков -->
+    <div class="blocks">
+        <!-- Четыре черных блока, каждый занимает 25% ширины -->
         <div class="block"></div>
         <div class="block"></div>
         <div class="block"></div>
         <div class="block"></div>
     </div>
-
-
-
-
 </body>
-
 </html>
